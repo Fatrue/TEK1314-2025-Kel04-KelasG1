@@ -1,31 +1,36 @@
-Logbook Proyek PBL Keamanan Siber - Kelompok 04
+# Logbook Proyek PBL Keamanan Siber - Kelompok 04
 
-Skenario: Data Integrity Shield
-Tema: Design, Attack, and Defend: SOC Analyst Simulation
-Target Aset: File Server (Samba/SMB)
-Fokus Ancaman: Ransomware Behavior Simulation (Bulk Encryption)
+**Skenario:** Data Integrity Shield  
+**Tema:** Design, Attack, and Defend: SOC Analyst Simulation  
+**Target Aset:** File Server berbasis Linux (Samba/SMB)  
+**Fokus Ancaman:** Ransomware Behavior Simulation (Bulk Encryption)
 
-Anggota Kelompok
+---
 
-Bramantyo Wicaksono – Lead Analyst
+## Anggota Kelompok
 
-Ilham Alfianda Fatwa – System/Network Engineer
+1. **Bramantyo Wicaksono** – Lead Analyst  
+2. **Ilham Alfianda Fatwa** – System/Network Engineer  
+3. **Muhammad Faturrahman** – Security Analyst  
 
-Muhammad Faturrahman – Security Analyst
+---
 
+## Deskripsi Skenario
 
-Deskripsi Skenario
+Pada skenario *Data Integrity Shield*, kelompok kami merancang dan membangun sebuah infrastruktur **File Server berbasis Linux menggunakan layanan Samba (SMB Protocol)** yang berfungsi sebagai media penyimpanan dokumen internal organisasi.
 
-Pada skenario ini, kelompok kami membangun sebuah File Server berbasis Linux (Samba/SMB) yang berfungsi sebagai penyimpanan dokumen internal.
+Simulasi insiden yang dilakukan adalah **Ransomware Behavior Simulation**, yaitu pembuatan skrip yang melakukan *bulk encryption* terhadap file dummy dalam direktori tertentu. Aktivitas ini dirancang untuk meniru pola serangan ransomware nyata yang mengenkripsi banyak file dalam waktu singkat guna mengganggu ketersediaan dan integritas data.
 
-Kami akan mensimulasikan perilaku ransomware berupa skrip yang melakukan enkripsi massal (bulk encryption) terhadap file dummy pada folder tertentu.
+Simulasi dilakukan secara terkontrol dan terbatas hanya pada folder yang telah ditentukan, tanpa menyentuh file sistem operasi, sesuai dengan *Rules of Engagement* yang telah disepakati.
 
-Tujuan utama proyek ini adalah:
+---
 
-Mendeteksi perubahan file secara masif
+## Tujuan Proyek
 
-Mengamati lonjakan traffic SMB
+Tujuan utama dari proyek ini adalah:
 
-Menganalisis log serangan melalui Security Onion
+- Mengidentifikasi perubahan file dalam jumlah besar sebagai indikator serangan ransomware  
+- Menganalisis lonjakan traffic SMB akibat aktivitas enkripsi massal  
+- Mengumpulkan dan mengevaluasi log serangan melalui sistem monitoring (Security Onion)  
+- Melakukan proses *Incident Response* berdasarkan standar **NIST Incident Response Lifecycle**  
 
-Melakukan respons insiden sesuai standar NIST
