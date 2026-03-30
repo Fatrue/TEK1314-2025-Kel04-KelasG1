@@ -11,8 +11,8 @@
 | Hostname        | Role                | IP Address      | OS                    | Main Service | Open Ports |
 |-----------------|--------------------|-----------------|-----------------------|--------------|------------|
 | attacker-04     | Attacker Node       | 192.168.4.100   | Kali Linux            | Attack Tools | - |
-| fileserver-04   | Target SMB Server   | 192.168.4.10     | Ubuntu Server 22.04   | Samba (SMB)  | 445, 139, 22 |
-| monitor-04      | Monitoring (SIEM)   | 192.168.4.20    | Security Onion        | IDS/SIEM     | 22 |
+| fileserver-04   | Target SMB Server   | 192.168.4.5     | Ubuntu Server 22.04   | Samba (SMB)  | 445, 139, 22 |
+| monitor-04      | Monitoring (SIEM)   | 192.168.4.10    | Security Onion        | IDS/SIEM     | 22 |
 
 ---
 
