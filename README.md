@@ -1,4 +1,4 @@
-# Logbook Proyek PBL Keamanan Siber - Kelompok 04
+# Proyek PBL Keamanan Siber - Kelompok 04
 
 **Skenario:** Data Integrity Shield  
 **Tema:** Design, Attack, and Defend: SOC Analyst Simulation  
