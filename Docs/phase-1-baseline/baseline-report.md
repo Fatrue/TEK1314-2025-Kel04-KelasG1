@@ -24,7 +24,7 @@ Seluruh VM berada pada jaringan internal 192.168.4.0/24 sehingga memungkinkan si
 
 **3. Network Hardening**
 
-### a. Firewall & Network Hardening
+### 3.1 Firewall & Network Hardening
 
 Untuk membatasi akses jaringan dan melindungi layanan SMB, dilakukan konfigurasi firewall UFW sebagai berikut:
 
@@ -33,7 +33,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow from 192.168.4.0/24 to any port 445
 sudo ufw allow from 192.168.4.0/24 to any port 139
-sudo ufw allow from 192.168.4.X to any port 22
+sudo ufw allow from 192.168.4.10 to any port 22  
 sudo ufw enable
 ```
 
