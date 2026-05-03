@@ -17,11 +17,13 @@
 
 ## Deskripsi Skenario
 
-Pada skenario *Data Integrity Shield*, kelompok kami merancang dan membangun sebuah infrastruktur **File Server berbasis Linux menggunakan layanan Samba (SMB Protocol)** yang berfungsi sebagai media penyimpanan dokumen internal organisasi.
+Pada skenario Data Integrity Shield, sistem yang dibangun berupa infrastruktur File Server berbasis Linux menggunakan layanan Samba (SMB) yang berfungsi sebagai media penyimpanan dokumen internal organisasi.
 
-Simulasi insiden yang dilakukan adalah **Ransomware Behavior Simulation**, yaitu pembuatan skrip yang melakukan *bulk encryption* terhadap file dummy dalam direktori tertentu. Aktivitas ini dirancang untuk meniru pola serangan ransomware nyata yang mengenkripsi banyak file dalam waktu singkat guna mengganggu ketersediaan dan integritas data.
+Skenario ini mensimulasikan kondisi insider threat, dimana sebuah endpoint dalam jaringan internal diasumsikan telah terkompromi dan digunakan sebagai titik awal serangan. Oleh karena itu, layanan SMB tetap dapat diakses dari jaringan internal untuk merepresentasikan kondisi nyata operasional sistem.
 
-Simulasi dilakukan secara terkontrol dan terbatas hanya pada folder yang telah ditentukan, tanpa menyentuh file sistem operasi, sesuai dengan *Rules of Engagement* yang telah disepakati.
+Simulasi insiden yang dilakukan adalah Ransomware Behavior Simulation, yaitu pembuatan skrip yang melakukan perubahan massal (bulk modification/encryption) terhadap file dummy pada direktori tertentu. Aktivitas ini dirancang untuk meniru karakteristik utama serangan ransomware, yaitu perubahan file dalam jumlah besar dalam waktu singkat yang berdampak pada integritas dan ketersediaan data.
+
+Simulasi dilakukan secara terkontrol dan terbatas hanya pada folder yang telah ditentukan (restricted), tanpa menyentuh file sistem operasi, sesuai dengan Rules of Engagement yang telah disepakati.
 
 ---
 
