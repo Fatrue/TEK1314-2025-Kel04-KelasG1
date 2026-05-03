@@ -36,7 +36,8 @@ sudo ufw allow from 192.168.4.0/24 to any port 139
 sudo ufw allow from 192.168.4.10 to any port 22  
 sudo ufw enable
 ```
-
+![1-firewall-smb-restricted](assets/hardening/1-firewall-smb-restricted.png)
+![2-firewall-allow-ssh](assets/hardening/2-firewall-allow-ssh.png)
 ---
 
 **4. System Hardening**
@@ -52,6 +53,8 @@ Konfigurasi file /etc/samba/smb.conf:
    map to guest = never
    restrict anonymous = 2
 ```
+![3-smb.conf-basic-configuration](assets/hardening/3-smb.conf-basic-configuration.png)
+
 
 Membuat folder share:
 
@@ -78,6 +81,7 @@ sudo adduser user1
 sudo usermod -aG smbgroup user1
 sudo smbpasswd -a user1
 ```
+![4-make folder,group,& user for SMB](assets/hardening/4-make-folder,group,&user-for-SMB.png)
 
 Konfigurasi share di smb.conf:
 ```
@@ -93,6 +97,8 @@ Konfigurasi share di smb.conf:
    read only = no
    browsable = yes
 ```
+![5-add share [public] and [restricted] in smb.conf](assets/hardening/5-add-share-[public]-and-[restricted]-in-smb.conf.png)
+
 
 Restart Samba:
 
@@ -104,12 +110,17 @@ sudo systemctl status smbd
 **4.2 Update & Patch System**
 
 `sudo apt update && sudo apt upgrade -y`
+![6-update & patch system.png](assets/hardening/6-update-&-patch-system.png)
+
+
 
 **4.3 Nonaktifkan Service Tidak Perlu**
 
 Cek service aktif:
 
 `systemctl list-units --type=service --state=running`
+![7-active service check](assets/hardening/7-active-service-check.png)
+
 
 Disable service yang tidak relevan, contoh:
 
@@ -117,6 +128,9 @@ Disable service yang tidak relevan, contoh:
 sudo systemctl disable ModemManager
 sudo systemctl stop ModemManager
 ```
+![8-disable unrelevant service](assets/hardening/8-disable-unrelevant-service.png)
+![9-active service check after minimization](assets/hardening/9-active-service-check-after-minimization.png)
+
 
 **4.4 Hardening SSH**
 
@@ -124,10 +138,13 @@ Edit /etc/ssh/sshd_config:
 
 `PermitRootLogin no`
 
+![10-disable root login](assets/hardening/10-disable-root-login.png)
+
 Restart SSH:
 
 `sudo systemctl restart ssh`
 
+![11-ssh status check](assets/hardening/11-ssh-status-check.png)
 
 ---
 
@@ -170,7 +187,10 @@ Hasil yang diperoleh:
 
 Selain itu, file capture dapat dianalisis menggunakan Wireshark untuk melihat detail paket secara lebih lengkap.
 
-Bukti visual berupa screenshot hasil tcpdump dan Wireshark disimpan pada folder /assets/.
+Bukti visual berupa screenshot hasil tcpdump dan Wireshark:
+
+![tcpdump-log-icmp.png](assets/logging-check-(minggu-ke-5)/tcpdump-log-icmp.png)
+![Wireshark-log-icmp](assets/logging-check-(minggu-ke-5)/Wireshark-log-icmp.png)
 
 ---
 
