@@ -69,6 +69,16 @@ Konfigurasi file /etc/samba/smb.conf:
    map to guest = never
    restrict anonymous = 2
 ```
+
+- `workgroup = WORKGROUP`
+  Menentukan nama workgroup agar sesuai dengan jaringan lokal (default Windows), sehingga memudahkan integrasi.
+- `security = user`
+  Mengharuskan setiap akses ke share menggunakan autentikasi username dan password, bukan akses terbuka.
+- `map to guest = never`
+  Menonaktifkan fallback ke akun guest, sehingga user yang gagal login tidak akan diberikan akses anonim.
+- `restrict anonymous = 2`
+  Membatasi sepenuhnya akses anonim (tanpa login), termasuk enumerasi user dan share, untuk mencegah informasi bocor.
+
 ![3-smb.conf-basic-configuration](assets/hardening/3-smb.conf-basic-configuration.png)
 
 Tambahkan juga di bagian [global]:
@@ -101,6 +111,8 @@ sudo chown -R root:smbgroup /srv/samba/share
 sudo chmod -R 770 /srv/samba/share
 ```
 
+Perintah `chown -R root:smbgroup /srv/samba/share` mengatur kepemilikan folder ke root dan grup smbgroup, sehingga hanya user dalam grup tersebut yang dapat mengakses. sedangkan `chmod -R 770 /srv/samba/share` memberikan akses penuh (read, write, execute) hanya ke owner dan grup, serta menolak akses dari user lain (no access for others).
+
 Menambahkan user SMB (non-root):
 
 ```
@@ -108,6 +120,14 @@ sudo adduser user1
 sudo usermod -aG smbgroup user1
 sudo smbpasswd -a user1
 ```
+
+- `adduser user1`
+  Membuat user baru di sistem Linux.
+- `usermod -aG smbgroup user1`
+  Menambahkan user ke grup smbgroup agar memiliki izin akses ke folder share.
+- `smbpasswd -a user1`
+  Mendaftarkan user ke database Samba dan menetapkan password khusus untuk autentikasi SMB.
+
 ![4-make folder,group,& user for SMB](assets/hardening/4-make-folder,group,&user-for-SMB.png)
 
 
