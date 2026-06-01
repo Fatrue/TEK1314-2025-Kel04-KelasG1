@@ -444,11 +444,11 @@ Hal ini membuktikan bahwa perubahan tidak hanya terjadi pada sisi klien, tetapi 
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.8 — Evidence Monitoring
+### Tahap 4.8 — Evidence Monitoring
 
 
 
@@ -460,13 +460,13 @@ Monitoring menunjukkan aktivitas SMB yang intensif pada port 445, berupa:
 
 
 
-\* Pembacaan file (SMB Read)
+* Pembacaan file (SMB Read)
 
-\* Penulisan ulang file (SMB Write)
+* Penulisan ulang file (SMB Write)
 
-\* Perubahan nama file (SMB Rename)
+* Perubahan nama file (SMB Rename)
 
-\* Pembukaan dan penutupan sesi SMB secara berulang
+* Pembukaan dan penutupan sesi SMB secara berulang
 
 
 
@@ -488,11 +488,11 @@ Pola komunikasi tersebut menunjukkan adanya aktivitas massal terhadap file share
 
 
 
-\---
+---
 
 
 
-\### Hasil Simulasi
+## Hasil Simulasi
 
 
 
@@ -500,15 +500,15 @@ Simulasi berhasil menunjukkan perilaku dasar ransomware terhadap shared folder S
 
 
 
-1\. Membaca file melalui SMB.
+1. Membaca file melalui SMB.
 
-2\. Memodifikasi isi file secara massal.
+2. Memodifikasi isi file secara massal.
 
-3\. Mengubah data asli menjadi bentuk yang tidak mudah dibaca.
+3. Mengubah data asli menjadi bentuk yang tidak mudah dibaca.
 
-4\. Mengganti nama file menggunakan ekstensi `.locked`.
+4. Mengganti nama file menggunakan ekstensi `.locked`.
 
-5\. Menghasilkan lonjakan aktivitas SMB yang dapat diamati melalui Security Onion.
+5. Menghasilkan lonjakan aktivitas SMB yang dapat diamati melalui Security Onion.
 
 
 
