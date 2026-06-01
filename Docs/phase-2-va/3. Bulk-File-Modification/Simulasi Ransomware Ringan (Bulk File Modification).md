@@ -24,13 +24,12 @@ Tujuan tahap ini adalah memastikan seluruh aktivitas SMB selama simulasi dapat d
 
 ```bash
 
-mkdir \~/smbshare
+mkdir ~/smbshare
 
+sudo mount -t cifs //192.168.4.5/restricted ~/smbshare \
+-o username=user1
 
-
-sudo mount -t cifs //192.168.4.5/restricted \~/smbshare \\
-
-\-o username=user1
+ls ~/smbshare
 
 ```
 
@@ -44,59 +43,21 @@ Shared folder `restricted` di-mount ke sistem Kali Linux menggunakan CIFS untuk 
 ---
 
 
+### Tahap 4. Baseline Verification
 
-
-Verifikasi:
-
-
-
+### Command
 ```bash
-
-ls \~/smbshare
-
+cat ~/smbshare/file1.txt
 ```
 
 
+### Result
+Hasil menampilkan teks `file restricted 1`.
 
-Hasil menunjukkan seluruh file pada shared folder berhasil terlihat dari sisi attacker.
+### Analysis
+Tahap ini digunakan sebagai baseline untuk membandingkan kondisi file sebelum dan sesudah simulasi
 
-
-
-### Tahap 3. Baseline Verification
-
-
-
-Sebelum dilakukan modifikasi, kondisi awal file diverifikasi terlebih dahulu.
-
-
-
-Perintah:
-
-
-
-```bash
-
-cat \~/smbshare/file1.txt
-
-```
-
-
-
-Hasil:
-
-
-
-```text
-
-file restricted 1
-
-```
-
-
-
-Tahap ini digunakan sebagai baseline untuk membandingkan kondisi file sebelum dan sesudah simulasi.
-
-
+---
 
 Tahap 4. Single File Modification Validation
 
