@@ -16,19 +16,11 @@ Sebelum simulasi dijalankan, Security Onion dikonfigurasi untuk memantau seluruh
 
 Tujuan tahap ini adalah memastikan seluruh aktivitas SMB selama simulasi dapat direkam sebagai evidence serangan.
 
+---
 
+### 3. Mount SMB Share Validation
 
-### Tahap 2. Mount SMB Share di Kali
-
-
-
-Shared folder `restricted` di-mount ke sistem Kali Linux menggunakan CIFS untuk memudahkan proses verifikasi isi file.
-
-
-
-Perintah yang digunakan:
-
-
+### Command
 
 ```bash
 
@@ -41,6 +33,16 @@ sudo mount -t cifs //192.168.4.5/restricted \~/smbshare \\
 \-o username=user1
 
 ```
+
+### Result
+Hasil menunjukkan seluruh file pada shared folder berhasil terlihat dari sisi attacker.  
+
+### Analysis
+Shared folder `restricted` di-mount ke sistem Kali Linux menggunakan CIFS untuk memudahkan proses verifikasi isi file.
+
+
+---
+
 
 
 
