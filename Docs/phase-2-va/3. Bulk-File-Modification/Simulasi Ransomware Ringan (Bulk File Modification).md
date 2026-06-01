@@ -1,7 +1,7 @@
-## 3. Simulasi Ransomware Ringan (Bulk File Modification)
+# Bulk-File-Modification
 
 
-
+## 1. Objective
 Tujuan tahap ini adalah mensimulasikan perilaku awal ransomware dengan melakukan modifikasi massal terhadap file yang berada pada SMB share. Aktivitas yang dilakukan meliputi akses ke file, perubahan isi file, serta pengamatan trafik SMB yang dihasilkan selama proses berlangsung.
 
 ---
