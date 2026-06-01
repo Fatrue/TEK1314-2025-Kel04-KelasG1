@@ -4,7 +4,7 @@
 
 Tujuan tahap ini adalah mensimulasikan perilaku awal ransomware dengan melakukan modifikasi massal terhadap file yang berada pada SMB share. Aktivitas yang dilakukan meliputi akses ke file, perubahan isi file, serta pengamatan trafik SMB yang dihasilkan selama proses berlangsung.
 
-
+---
 
 ### Tahap 3.1 – Persiapan Monitoring
 
