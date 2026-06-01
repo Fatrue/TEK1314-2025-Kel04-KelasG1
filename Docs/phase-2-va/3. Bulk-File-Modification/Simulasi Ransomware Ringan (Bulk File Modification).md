@@ -6,7 +6,7 @@ Tujuan tahap ini adalah mensimulasikan perilaku awal ransomware dengan melakukan
 
 ---
 
-### 2. Persiapan Monitoring
+### Tahap3.1 Persiapan Monitoring
 
 
 
@@ -18,75 +18,161 @@ Tujuan tahap ini adalah memastikan seluruh aktivitas SMB selama simulasi dapat d
 
 ---
 
-### 3. Mount SMB Share Validation
+\### Tahap 3.2 – Mount SMB Share di Kali
 
-### Command
 
-```bash
 
-mkdir ~/smbshare
-
-sudo mount -t cifs //192.168.4.5/restricted ~/smbshare \
--o username=user1
-
-ls ~/smbshare
-
-```
-
-### Result
-Hasil menunjukkan seluruh file pada shared folder berhasil terlihat dari sisi attacker.  
-
-### Analysis
 Shared folder `restricted` di-mount ke sistem Kali Linux menggunakan CIFS untuk memudahkan proses verifikasi isi file.
 
 
----
+
+Perintah yang digunakan:
 
 
-### 4. Baseline Verification
 
-### Command
 ```bash
-cat ~/smbshare/file1.txt
+
+mkdir \~/smbshare
+
+
+
+sudo mount -t cifs //192.168.4.5/restricted \~/smbshare \\
+
+\-o username=user1
+
 ```
 
 
-### Result
-Hasil menampilkan teks `file restricted 1`.
 
-### Analysis
-Tahap ini digunakan sebagai baseline untuk membandingkan kondisi file sebelum dan sesudah simulasi
+Verifikasi:
+
+
+
+```bash
+
+ls \~/smbshare
+
+```
+
+
+
+Hasil menunjukkan seluruh file pada shared folder berhasil terlihat dari sisi attacker.
 
 ---
 
-### 5. Single File Modification Validation
+\### Tahap 3.3 – Baseline Verification
 
-### Command 
+
+
+Sebelum dilakukan modifikasi, kondisi awal file diverifikasi terlebih dahulu.
+
+
+
+Perintah:
+
+
+
+```bash
+
+cat \~/smbshare/file1.txt
+
+```
+
+
+
+Hasil:
+
+
+
+```text
+
+file restricted 1
+
+```
+
+
+
+Tahap ini digunakan sebagai baseline untuk membandingkan kondisi file sebelum dan sesudah simulasi.
+
+---
+
+\### Tahap 3.4 – Single File Modification Validation
+
+
+
+Pengujian awal dilakukan terhadap satu file untuk memastikan attacker dapat memodifikasi isi file melalui SMB.
+
+
+
+File payload dibuat pada Kali Linux:
+
+
+
 ```bash
 
 echo "FILE MODIFIED BY RANSOMWARE SIMULATION" > modified.txt
 
+```
+
+
+
+Kemudian file diunggah dan menimpa file target menggunakan SMB:
+
+
+
+```bash
+
 smbclient //192.168.4.5/restricted -U user1
+
+```
+
+
+
+```bash
 
 put modified.txt file1.txt
 
+```
+
+
+
+Verifikasi dilakukan dengan mengunduh kembali file yang telah dimodifikasi:
+
+
+
+```bash
+
 get file1.txt verify.txt
+
+```
+
+
+
+```bash
 
 cat verify.txt
 
 ```
 
-### Result 
 
-Hasil dari file yang diunduh kembali menampilkan teks `FILE MODIFIED BY RANSOMWARE SIMULATION`.
 
-### Analysis
+Hasil:
+
+
+
+```text
+
+FILE MODIFIED BY RANSOMWARE SIMULATION
+
+```
+
+
 
 Hasil tersebut membuktikan bahwa attacker berhasil melakukan overwrite terhadap file yang berada pada shared folder.
 
 ---
 
-### Tahap 5. Bulk File Modification
+\### Tahap 3.5 – Bulk File Modification
 
 
 
@@ -140,7 +226,7 @@ Tahap ini mensimulasikan perilaku ransomware yang melakukan perubahan terhadap b
 
 ---
 
-### Tahap 6. Bulk Modification Verification
+\### Tahap 3.6 – Bulk Modification Verification
 
 
 
@@ -200,7 +286,7 @@ Hal ini menunjukkan bahwa proses modifikasi massal berhasil diterapkan pada selu
 
 ---
 
-### Tahap 7. Verifikasi Server
+\### Tahap 3.7 – Verifikasi Server
 
 
 
@@ -252,9 +338,9 @@ FILE MODIFIED BY RANSOMWARE SIMULATION
 
 Tahap ini membuktikan bahwa perubahan yang dilakukan dari sisi attacker benar-benar tersimpan pada filesystem server.
 
+---
 
-
-### Tahap 8. Evidence Monitoring
+\### Tahap 3.8 – Evidence Monitoring
 
 
 
@@ -280,7 +366,7 @@ dengan sejumlah paket SMB yang muncul secara berurutan selama script dijalankan.
 
 Aktivitas ini menunjukkan adanya peningkatan operasi SMB write yang dapat digunakan sebagai indikator perilaku ransomware pada tahap investigasi dan incident response.
 
-
+---
 
 \### Kesimpulan
 
