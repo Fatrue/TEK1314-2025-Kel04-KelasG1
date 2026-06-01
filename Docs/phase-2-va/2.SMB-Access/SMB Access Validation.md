@@ -14,11 +14,11 @@ Pengujian dilakukan untuk memverifikasi bahwa pengguna SMB yang memiliki kredens
 
 
 
-\## 2. SMB Login Validation
+## 2. SMB Login Validation
 
 
 
-\### Command
+### Command
 
 
 
@@ -30,7 +30,7 @@ smbclient //192.168.4.5/restricted -U user1
 
 
 
-\### Result
+### Result
 
 
 
@@ -38,7 +38,7 @@ Login berhasil dan pengguna memperoleh prompt SMB.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -46,15 +46,15 @@ Kredensial user1 berhasil digunakan untuk mengakses shared folder restricted.
 
 
 
-\---
+---
 
 
 
-\## 3. File Enumeration Validation
+## 3. File Enumeration Validation
 
 
 
-\### Command
+### Command
 
 
 
@@ -66,7 +66,7 @@ ls
 
 
 
-\### Result
+### Result
 
 
 
@@ -74,7 +74,7 @@ Berhasil menampilkan daftar file pada shared folder.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -82,15 +82,15 @@ Attacker dapat mengidentifikasi file yang tersedia sebagai target potensial untu
 
 
 
-\---
+---
 
 
 
-\## 4. File Download Validation
+## 4. File Download Validation
 
 
 
-\### Command
+### Command
 
 
 
@@ -102,7 +102,7 @@ get file9.txt
 
 
 
-\### Result
+### Result
 
 
 
@@ -110,7 +110,7 @@ File berhasil diunduh ke mesin Kali Linux.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -118,15 +118,15 @@ Pengguna memiliki kemampuan untuk mengambil data dari server sehingga berpotensi
 
 
 
-\---
+---
 
 
 
-\## 5. File Upload Validation
+## 5. File Upload Validation
 
 
 
-\### Command
+### Command
 
 
 
@@ -138,7 +138,7 @@ put test-upload.txt
 
 
 
-\### Result
+### Result
 
 
 
@@ -146,7 +146,7 @@ File berhasil ditambahkan ke shared folder.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -154,15 +154,15 @@ Pengguna memiliki hak tulis terhadap shared folder sehingga dapat membuat file b
 
 
 
-\---
+---
 
 
 
-\## 6. File Rename Validation
+## 6. File Rename Validation
 
 
 
-\### Command
+### Command
 
 
 
@@ -174,7 +174,7 @@ rename test-upload.txt test-encrypted.txt
 
 
 
-\### Result
+### Result
 
 
 
@@ -182,7 +182,7 @@ Nama file berhasil diubah.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -194,11 +194,11 @@ Pengguna dapat melakukan perubahan terhadap struktur file. Aktivitas ini menyeru
 
 
 
-\## 7. File Deletion Validation
+## 7. File Deletion Validation
 
 
 
-\### Command
+### Command
 
 
 
@@ -210,7 +210,7 @@ del test-encrypted.txt
 
 
 
-\### Result
+### Result
 
 
 
@@ -218,7 +218,7 @@ File berhasil dihapus dari shared folder.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -230,11 +230,11 @@ Pengguna memiliki hak untuk menghapus file sehingga dapat menyebabkan kehilangan
 
 
 
-\## 8. Server-side Verification
+## 8. Server-side Verification
 
 
 
-\### Command
+### Command
 
 
 
@@ -246,7 +246,7 @@ ls -lah /srv/samba/share/restricted/
 
 
 
-\### Result
+### Result
 
 
 
@@ -254,7 +254,7 @@ Perubahan yang dilakukan melalui SMB terlihat langsung pada filesystem server.
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -262,15 +262,15 @@ Aktivitas upload, rename, dan delete yang dilakukan dari Kali Linux berhasil dit
 
 
 
-\---
+---
 
 
 
-\## 9. Network Monitoring Verification
+## 9. Network Monitoring Verification
 
 
 
-\### Command
+### Command
 
 
 
@@ -282,7 +282,7 @@ sudo tcpdump -i eth1 port 445
 
 
 
-\### Result
+### Result
 
 
 
@@ -290,7 +290,7 @@ Traffic SMB antara attacker (192.168.4.100) dan server (192.168.4.5) berhasil di
 
 
 
-\### Analysis
+### Analysis
 
 
 
@@ -298,11 +298,11 @@ Aktivitas SMB menghasilkan jejak jaringan yang dapat diamati oleh Security Onion
 
 
 
-\---
+---
 
 
 
-\## 10. Conclusion
+## 10. Conclusion
 
 
 
