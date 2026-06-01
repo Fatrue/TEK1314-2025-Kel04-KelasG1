@@ -75,13 +75,15 @@ ls -l \~/evidence
 Output:
 
 
-
+```
 bulk\_modify.sh
-
+```
+```
 encrypt\_files.sh
-
+```
+```
 rename\_locked.sh
-
+```
 Fungsi Script
 
 Script	Fungsi
@@ -105,27 +107,27 @@ Salah satu file hasil simulasi diambil sebagai sampel bukti.
 Mengambil file dari SMB share:
 
 
-
+```
 smbclient //192.168.4.5/restricted -U user1
 
 get file1.locked evidence\_file1.locked
-
+```
 
 
 Verifikasi isi file:
 
 
-
+```
 cat evidence\_file1.locked
-
+```
 
 
 Output:
 
 
-
+```
 RG9rdW1lbiBwZW50aW5nIHBlcnVzYWhhYW4gMQo=
-
+```
 
 
 Nilai tersebut merupakan hasil encoding Base64 dari isi file asli.
@@ -135,17 +137,17 @@ Nilai tersebut merupakan hasil encoding Base64 dari isi file asli.
 Contoh decoding:
 
 
-
+```
 echo "RG9rdW1lbiBwZW50aW5nIHBlcnVzYWhhYW4gMQo=" | base64 -d
-
+```
 
 
 Hasil:
 
 
-
+```
 Dokumen penting perusahaan 1
-
+```
 
 
 Hal ini menunjukkan bahwa isi file telah berubah menjadi format yang tidak dapat langsung dibaca oleh pengguna.
@@ -163,15 +165,15 @@ Listing direktori server disimpan untuk menunjukkan kondisi akhir file setelah s
 Perintah:
 
 
-
+```
 ls -lsh /srv/samba/share/restricted/ > evidence\_listing.txt
-
+```
 
 
 Sebagian hasil:
 
 
-
+```
 file1.locked
 
 file2.locked
@@ -181,13 +183,13 @@ file3.locked
 ...
 
 file10.locked
-
+```
 
 
 Ditemukan pula file kosong dengan nama asli:
 
 
-
+```
 file1.txt
 
 file2.txt
@@ -195,7 +197,7 @@ file2.txt
 ...
 
 file10.txt
-
+```
 
 
 Kondisi ini muncul karena script enkripsi dijalankan kembali setelah proses rename sehingga file baru dengan nama lama dibuat ulang oleh SMB client.
@@ -269,9 +271,9 @@ Dokumen penting perusahaan 1
 menjadi:
 
 
-
+```
 RG9rdW1lbiBwZW50aW5nIHBlcnVzYWhhYW4gMQo=
-
+```
 IOC Aktivitas
 
 Banyak file diakses dalam waktu singkat.
