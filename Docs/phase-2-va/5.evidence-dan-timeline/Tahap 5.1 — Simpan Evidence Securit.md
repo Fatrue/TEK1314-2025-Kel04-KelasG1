@@ -6,7 +6,7 @@
 
 Tahap ini bertujuan mengumpulkan seluruh artefak hasil simulasi ransomware untuk digunakan pada fase analisis insiden dan penyusunan laporan incident response.
 
-
+---
 
 ### Tahap 5.1 — Evidence Monitoring Security Onion
 
