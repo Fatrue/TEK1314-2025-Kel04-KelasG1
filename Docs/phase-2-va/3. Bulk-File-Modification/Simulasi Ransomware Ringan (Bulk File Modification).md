@@ -18,7 +18,7 @@ Tujuan tahap ini adalah memastikan seluruh aktivitas SMB selama simulasi dapat d
 
 
 
-\### Tahap 3.2 – Mount SMB Share di Kali
+### Tahap 2. Mount SMB Share di Kali
 
 
 
@@ -60,7 +60,7 @@ Hasil menunjukkan seluruh file pada shared folder berhasil terlihat dari sisi at
 
 
 
-\### Tahap 3.3 – Baseline Verification
+### Tahap 3. Baseline Verification
 
 
 
@@ -96,7 +96,7 @@ Tahap ini digunakan sebagai baseline untuk membandingkan kondisi file sebelum da
 
 
 
-\### Tahap 3.4 – Single File Modification Validation
+Tahap 4. Single File Modification Validation
 
 
 
@@ -172,7 +172,7 @@ Hasil tersebut membuktikan bahwa attacker berhasil melakukan overwrite terhadap 
 
 
 
-\### Tahap 3.5 – Bulk File Modification
+### Tahap 5. Bulk File Modification
 
 
 
@@ -226,7 +226,7 @@ Tahap ini mensimulasikan perilaku ransomware yang melakukan perubahan terhadap b
 
 
 
-\### Tahap 3.6 – Bulk Modification Verification
+### Tahap 6. Bulk Modification Verification
 
 
 
@@ -286,7 +286,7 @@ Hal ini menunjukkan bahwa proses modifikasi massal berhasil diterapkan pada selu
 
 
 
-\### Tahap 3.7 – Verifikasi Server
+### Tahap 7. Verifikasi Server
 
 
 
@@ -340,7 +340,7 @@ Tahap ini membuktikan bahwa perubahan yang dilakukan dari sisi attacker benar-be
 
 
 
-\### Tahap 3.8 – Evidence Monitoring
+### Tahap 8. Evidence Monitoring
 
 
 
