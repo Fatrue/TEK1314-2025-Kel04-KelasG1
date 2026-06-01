@@ -6,7 +6,7 @@ Tujuan tahap ini adalah mensimulasikan perilaku awal ransomware dengan melakukan
 
 ---
 
-### Tahap3.1 Persiapan Monitoring
+#### Tahap3.1 Persiapan Monitoring
 
 
 
