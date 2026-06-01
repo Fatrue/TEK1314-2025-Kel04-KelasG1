@@ -1,8 +1,8 @@
-## SMB Access Validation Report
+# SMB Access Validation Report
 
 
 
-# 1. Objective
+## 1. Objective
 
 
 
@@ -10,7 +10,7 @@ Pengujian dilakukan untuk memverifikasi bahwa pengguna SMB yang memiliki kredens
 
 
 
-\---
+---
 
 
 
