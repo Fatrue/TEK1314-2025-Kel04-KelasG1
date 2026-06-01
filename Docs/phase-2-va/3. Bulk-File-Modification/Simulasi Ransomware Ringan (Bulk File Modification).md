@@ -43,7 +43,7 @@ Shared folder `restricted` di-mount ke sistem Kali Linux menggunakan CIFS untuk 
 ---
 
 
-### Tahap 4. Baseline Verification
+### 4. Baseline Verification
 
 ### Command
 ```bash
@@ -59,81 +59,32 @@ Tahap ini digunakan sebagai baseline untuk membandingkan kondisi file sebelum da
 
 ---
 
-Tahap 4. Single File Modification Validation
+### 5. Single File Modification Validation
 
-
-
-Pengujian awal dilakukan terhadap satu file untuk memastikan attacker dapat memodifikasi isi file melalui SMB.
-
-
-
-File payload dibuat pada Kali Linux:
-
-
-
+### Command 
 ```bash
 
 echo "FILE MODIFIED BY RANSOMWARE SIMULATION" > modified.txt
 
-```
-
-
-
-Kemudian file diunggah dan menimpa file target menggunakan SMB:
-
-
-
-```bash
-
 smbclient //192.168.4.5/restricted -U user1
-
-```
-
-
-
-```bash
 
 put modified.txt file1.txt
 
-```
-
-
-
-Verifikasi dilakukan dengan mengunduh kembali file yang telah dimodifikasi:
-
-
-
-```bash
-
 get file1.txt verify.txt
-
-```
-
-
-
-```bash
 
 cat verify.txt
 
 ```
 
+### Result 
 
+Hasil dari file yang diunduh kembali menampilkan teks `FILE MODIFIED BY RANSOMWARE SIMULATION`.
 
-Hasil:
-
-
-
-```text
-
-FILE MODIFIED BY RANSOMWARE SIMULATION
-
-```
-
-
+### Analysis
 
 Hasil tersebut membuktikan bahwa attacker berhasil melakukan overwrite terhadap file yang berada pada shared folder.
 
-
+---
 
 ### Tahap 5. Bulk File Modification
 
@@ -187,7 +138,7 @@ Hasil menunjukkan seluruh file dari `file1.txt` hingga `file10.txt` berhasil dit
 
 Tahap ini mensimulasikan perilaku ransomware yang melakukan perubahan terhadap banyak file dalam waktu singkat.
 
-
+---
 
 ### Tahap 6. Bulk Modification Verification
 
@@ -247,7 +198,7 @@ pada seluruh file yang diuji.
 
 Hal ini menunjukkan bahwa proses modifikasi massal berhasil diterapkan pada seluruh file target.
 
-
+---
 
 ### Tahap 7. Verifikasi Server
 
