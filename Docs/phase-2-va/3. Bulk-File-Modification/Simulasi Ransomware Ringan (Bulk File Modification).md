@@ -1,4 +1,4 @@
-3\. Simulasi Ransomware Ringan (Bulk File Modification)
+##3. Simulasi Ransomware Ringan (Bulk File Modification)
 
 
 
@@ -6,7 +6,7 @@ Tujuan tahap ini adalah mensimulasikan perilaku awal ransomware dengan melakukan
 
 
 
-\### Tahap 3.1 – Persiapan Monitoring
+### Tahap 3.1 – Persiapan Monitoring
 
 
 
