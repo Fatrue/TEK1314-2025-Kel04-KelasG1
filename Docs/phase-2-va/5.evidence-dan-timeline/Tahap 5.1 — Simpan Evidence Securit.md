@@ -1,6 +1,6 @@
-5\. Evidence Collection dan Preliminary Analysis
+# 5. Evidence Collection dan Preliminary Analysis
 
-Tujuan
+## Tujuan
 
 
 
@@ -8,7 +8,7 @@ Tahap ini bertujuan mengumpulkan seluruh artefak hasil simulasi ransomware untuk
 
 
 
-Tahap 5.1 — Evidence Monitoring Security Onion
+### Tahap 5.1 — Evidence Monitoring Security Onion
 
 
 
@@ -33,43 +33,43 @@ Aktivitas rename massal file menjadi .locked
 Contoh log trafik yang tertangkap:
 
 
-
+```
 IP 192.168.4.100.58260 > 192.168.4.5.microsoft-ds
 
 IP 192.168.4.5.microsoft-ds > 192.168.4.100.58260
-
+```
 
 
 Hasil ini menunjukkan adanya komunikasi SMB yang intensif selama proses simulasi ransomware berlangsung.
 
+---
 
-
-Tahap 5.2 — Evidence dari Host Attacker
+### Tahap 5.2 — Evidence dari Host Attacker
 
 
 
 Seluruh script yang digunakan selama simulasi disimpan sebagai artefak investigasi.
 
 
-
+```
 mkdir -p \~/evidence
+```
 
-
-
+```
 cp bulk\_modify.sh \~/evidence/
 
 cp encrypt\_files.sh \~/evidence/
 
 cp rename\_locked.sh \~/evidence/
-
+```
 
 
 Verifikasi:
 
 
-
+```
 ls -l \~/evidence
-
+```
 
 
 Output:
@@ -92,7 +92,9 @@ encrypt\_files.sh	Melakukan simulasi enkripsi menggunakan Base64
 
 rename\_locked.sh	Mengubah nama file menjadi ekstensi .locked
 
-Tahap 5.3 — Evidence File Terenkripsi
+---
+
+### Tahap 5.3 — Evidence File Terenkripsi
 
 
 
@@ -148,9 +150,9 @@ Dokumen penting perusahaan 1
 
 Hal ini menunjukkan bahwa isi file telah berubah menjadi format yang tidak dapat langsung dibaca oleh pengguna.
 
+---
 
-
-Tahap 5.4 — Evidence dari Server
+### Tahap 5.4 — Evidence dari Server
 
 
 
@@ -202,9 +204,9 @@ Kondisi ini muncul karena script enkripsi dijalankan kembali setelah proses rena
 
 Meskipun demikian, file .locked tetap menyimpan hasil simulasi enkripsi yang valid dan dapat digunakan sebagai evidence utama.
 
+---
 
-
-Tahap 5.5 — Identifikasi IOC (Indicators of Compromise)
+### Tahap 5.5 — Identifikasi IOC (Indicators of Compromise)
 
 
 
@@ -304,7 +306,9 @@ T7	Security Onion menangkap lonjakan trafik SMB
 
 T8	Evidence dikumpulkan untuk analisis
 
-Kesimpulan
+---
+
+## Kesimpulan
 
 
 
