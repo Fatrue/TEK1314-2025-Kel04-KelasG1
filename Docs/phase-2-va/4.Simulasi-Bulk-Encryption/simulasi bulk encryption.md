@@ -1,8 +1,8 @@
-\## Langkah 4 — Simulasi Bulk Encryption
+# Langkah 4 — Simulasi Bulk Encryption
 
 
 
-\### Tujuan
+## Tujuan
 
 
 
@@ -10,11 +10,11 @@ Tahap ini bertujuan mensimulasikan perilaku ransomware yang melakukan enkripsi m
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.1 — Persiapan Dataset
+### Tahap 4.1 — Persiapan Dataset
 
 
 
@@ -98,11 +98,11 @@ Kondisi ini menjadi baseline sebelum simulasi enkripsi dilakukan.
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.2 — Pembuatan Script Enkripsi Sederhana
+### Tahap 4.2 — Pembuatan Script Enkripsi Sederhana
 
 
 
@@ -110,11 +110,11 @@ Script dibuat untuk melakukan proses berikut secara otomatis:
 
 
 
-1\. Mengunduh file dari SMB share.
+1. Mengunduh file dari SMB share.
 
-2\. Mengubah isi file menjadi format Base64.
+2. Mengubah isi file menjadi format Base64.
 
-3\. Mengunggah kembali hasil encoding ke file yang sama.
+3. Mengunggah kembali hasil encoding ke file yang sama.
 
 
 
@@ -164,11 +164,11 @@ Script tersebut mensimulasikan perilaku ransomware yang membaca file korban, mem
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.3 — Simulasi Bulk Encryption
+### Tahap 4.3 — Simulasi Bulk Encryption
 
 
 
@@ -214,11 +214,11 @@ Proses tersebut berlangsung untuk seluruh file target dalam direktori `restricte
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.4 — Verifikasi Hasil Enkripsi
+### Tahap 4.4 — Verifikasi Hasil Enkripsi
 
 
 
@@ -274,11 +274,11 @@ Hasil tersebut menunjukkan bahwa data asli tidak lagi dapat dibaca secara langsu
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.5 — Simulasi Bulk Rename (Locked Files)
+### Tahap 4.5 — Simulasi Bulk Rename (Locked Files)
 
 
 
@@ -330,11 +330,11 @@ Tahap ini mensimulasikan ransomware yang menandai file korban sebagai file yang 
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.6 — Verifikasi Rename
+### Tahap 4.6 — Verifikasi Rename
 
 
 
@@ -374,11 +374,11 @@ Tidak ditemukan lagi file dengan ekstensi `.txt` yang menjadi target simulasi.
 
 
 
-\---
+---
 
 
 
-\### Tahap 4.7 — Verifikasi pada Server
+### Tahap 4.7 — Verifikasi pada Server
 
 
 
